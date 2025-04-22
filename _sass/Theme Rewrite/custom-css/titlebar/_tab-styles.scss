@@ -1,0 +1,25 @@
+.tab-auto {
+    & .workspace .mod-root .workspace-tab-header,
+    & .mod-root .workspace-tab-header-inner {
+        container-type: normal;
+        width: min-content;
+    }
+    & .workspace .mod-root .workspace-tab-header-new-tab {
+        margin-inline-start: 2px;
+        margin-inline-end: 0px;
+    }
+    & .workspace .mod-root .workspace-tab-header-container-inner {
+        // padding: 2px;
+    }
+}
+.tab-wide {
+    --tab-width: auto;
+    --tab-max-width: 100%;
+
+    & .workspace .mod-root .workspace-tab-header,
+    & .workspace-tab-header-container-inner { flex: auto; }
+
+    // & .workspace .mod-root .workspace-tab-header { flex: 1 1 auto; }
+
+    & .workspace-tab-header-spacer { display: none; }
+}

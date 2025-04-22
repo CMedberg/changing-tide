@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>När Tidvattnet Vänder</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body class="theme-dark">
+        <!-- <header role="banner" id="banner">
+            <h1> När Tidvattnet Vänder</h1>
+        </header> -->
+        <div role="main" id="main" class="site-body">
+        <h2 id="image-adjustments">Image Adjustments</h2>
+<h6 id="by-slrvb">by <a href="https://SlRvb.github.io/Site/">SlRvb</a></h6>
+<p>Inspired by <a href="https://github.com/Lithou/Sandbox/blob/main/.obsidian/snippets/pub-Image%20Flags.css">Lithou’s Image Flags</a></p>
+
+<hr />
+<h2 id="syntax">Syntax</h2>
+<s class="aside-in">**⚠ Note:** Markdown syntax will need the note to be reopened to see changes.</s>
+
+<p><strong>Wiki Links:</strong> <code class="language-plaintext highlighter-rouge">![[Image.png|modifier+modifier|#]]</code>
+<strong>Markdown:</strong> <code class="language-plaintext highlighter-rouge">![|modifier+modifier|#](Image.png)</code></p>
+
+<p><strong>Example</strong>: <code class="language-plaintext highlighter-rouge">![[Image.png|left+pt|200]]</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">|</code> is required <em>after</em> the image extension and <em>before</em> Obsidian’s sizing numbers</li>
+  <li><code class="language-plaintext highlighter-rouge">+</code> can be anything:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">![[Image.png|left-pt-sban|200]]</code>
+  <code class="language-plaintext highlighter-rouge">![[Image.png|left_pt_sban|200]]</code>
+  <code class="language-plaintext highlighter-rouge">![[Image.png|left|pt|sban|200]]</code>
+  <code class="language-plaintext highlighter-rouge">![[Image.png|left pt sban|200]]</code></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h2 id="simplified-version">Simplified Version</h2>
+<p>Optimized for easier comprehension and “quicker” styling</p>
+
+<p><code class="language-plaintext highlighter-rouge">![[Image.png|left+small]]</code></p>
+
+<hr />
+<h3 id="positions">Positions</h3>
+<p><code class="language-plaintext highlighter-rouge">left</code>, <code class="language-plaintext highlighter-rouge">center</code>, <code class="language-plaintext highlighter-rouge">right</code></p>
+
+<p>![[Image_Adjustments-Simple-Positions.png]]</p>
+
+<hr />
+<h3 id="types">Types</h3>
+<s class="aside-in">Style of sizing for images.</s>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">banner</code></td>
+      <td>Expand image to width of the page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">portrait</code></td>
+      <td>Larger image height than image’s width</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">p.rofile</code></td>
+      <td>Width and height of the image are equal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">circle</code></td>
+      <td>Round edges of a squared image (best with <code class="language-plaintext highlighter-rouge">p.rofile</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>![[Image_Adjustments-Simple-Types.png</td>
+      <td>700]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h3 id="type-sizing">Type Sizing</h3>
+<p>&lt;s class=aside-in&gt;⚠ <strong>Note</strong>: Obsidian’s number sizing <code class="language-plaintext highlighter-rouge">|###</code> will <strong>not</strong> work with these.&lt;/s&gt;</p>
+
+<p><strong>Format</strong>: <code class="language-plaintext highlighter-rouge">![[Image.png|modifier+size]]</code></p>
+
+<ul>
+  <li>**Banner &amp; Portrait **use <code class="language-plaintext highlighter-rouge">+small</code> and <code class="language-plaintext highlighter-rouge">+tall</code> sizing</li>
+  <li><strong>Profile</strong> uses <code class="language-plaintext highlighter-rouge">+medium</code> only.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>![[Image_Adjustments-Simple-Sizing.png</td>
+      <td>700]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h2 id="customizable-version">Customizable Version</h2>
+<p>Allows for more adjustments to images than the <strong>Simplified Version</strong>.</p>
+
+<hr />
+<h3 id="position--types">Position &amp; Types</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">locr</code></td>
+      <td>Location Right, float image to right of note</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">locl</code></td>
+      <td>Location Left, float image to left of note</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ctr</code></td>
+      <td>Center image on page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sban</code></td>
+      <td>Banner sets width of image to 100%, height will be adjustable</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cover</code></td>
+      <td>Fit image in bounds without stretching</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>![[Image Adjustments-Custom - Pos+Types.png</td>
+      <td>700]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h3 id="inner-photo-position">Inner Photo Position</h3>
+<p>Adjustments to target which part of the <em>inside</em> of the image to move around, <strong>not</strong> the where the image is moved to on a page.</p>
+
+<hr />
+<h4 id="basic">Basic</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Basic</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">pt</code></td>
+      <td>Top</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">pb</code></td>
+      <td>Bottom</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">pl</code></td>
+      <td>Left</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">pr</code></td>
+      <td>Right</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">pc</code></td>
+      <td>Center</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>![[Image Adjustments-Custom - Inner Position Basic.png</td>
+      <td>700]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h4 id="precise">Precise</h4>
+<p><strong>Format</strong>: <code class="language-plaintext highlighter-rouge">![[|p+precise]]</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Top</th>
+      <th>Bottom</th>
+      <th>Left</th>
+      <th>Right</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">p+ct</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+cb</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+cl</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+cr</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">p+cct</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+ccb</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">p+tc</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+bc</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">p+tcc</code></td>
+      <td><code class="language-plaintext highlighter-rouge">p+bcc</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>![[Image_Adjustments-Custom-Inner_Position_Precise.png</td>
+      <td>800]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h3 id="sizing">Sizing</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Height</th>
+      <th>Width</th>
+      <th style="text-align: right">PX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hmicro</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wmicro</code></td>
+      <td style="text-align: right">70</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">htiny</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wtiny</code></td>
+      <td style="text-align: right">100</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hsmall</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wsmall</code></td>
+      <td style="text-align: right">200</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hs-med</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ws-med</code></td>
+      <td style="text-align: right">300</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hm-sm</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wm-sm</code></td>
+      <td style="text-align: right">400</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hmed</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wmed</code></td>
+      <td style="text-align: right">500</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hm-tl</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wm-tl</code></td>
+      <td style="text-align: right">600</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">htall</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wtall</code></td>
+      <td style="text-align: right">700</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>![[Image_Adjustments-Custom-Sizing.png]]</p>
+
+<hr />
+
+<h2 id="extras">Extras</h2>
+<p>Uses some of the <a href="https://forum.obsidian.md/t/auto-adaptive-images-for-dark-light-theme/13494">Auto-Adaptive Images</a> snippet with slightly different synax.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invertw</code></td>
+      <td>Flip image colors of white lined images</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invertb</code></td>
+      <td>Flip image colors of dark lined images</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invertwc</code></td>
+      <td>Flip image colors of white lined images</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">invertbc</code></td>
+      <td>Flip image colors of dark lined images</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">clear</code></td>
+      <td>Image will sit below another image if it’s on the same side</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>![[Image Adjustments-Extras Invert.gif]]</p>
+
+        </div>
+        <footer role="contentinfo" id="contentinfo">
+        </footer>
+    </body>
+</html>

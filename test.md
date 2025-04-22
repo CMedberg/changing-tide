@@ -62,3 +62,14 @@ Caerula moventem furore discordemque avus Hypsipyles ferox sumptis antiquas
 urbesque, coepi mactas, huius. Arva innumerasque hederae. Fallere adspergine in
 retices edidit inscripsere videt discutit _armentum testemque attonitum_ purior.
 Tandem quae [fortes verus sitientes](http://ac.com/).
+
+> [!note] Everyone's Second-Best Friends
+>
+> Just as readily as they mix with each other, humans mingle with members of other races. They get along with almost everyone, though they might not be close to many. Humans serve as ambassadors, diplomats, magistrates, merchants, and functionaries of all kinds.
+>
+> **Dwarves.** "They're stout folk, stalwart friends, and true to their word. Their greed for gold is their downfall, though."
+>
+> **Elves.** "It's best not to wander into elven woods. They don't like intruders, and you'll as likely be bewitched as peppered with arrows. Still, if an elf can get past that damned racial pride and actually treat you like an equal, you can learn a lot from them."
+>
+> **Halflings.** "It's hard to beat a meal in a halfling home, as long as you don't crack your head on the ceiling - good food and good stories in front of a nice, warm fire. If halflings had a shred of ambition, they might really amount to something."
+> ^everyones-second-best-friends

@@ -1,7 +1,8 @@
 title: När Tidvattnet Vänder
 description: Vår Dungeons & Dragons-kampanj i Véradis.
-markdown: kramdown # Standard för GitHub Pages
-remote_theme: jeremyboggs/5e
+markdown: kramdown
+# theme: minima
+# remote_theme: jeremyboggs/5e
 # remote_theme: pages-themes/architect@v0.1.1
 plugins:
   - jekyll-remote-theme
