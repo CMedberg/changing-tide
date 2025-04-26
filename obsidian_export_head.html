@@ -1,0 +1,39 @@
+<style>
+  .tree-container .clickable-icon {
+    display: none !important;
+  }
+
+  .tree-container .tree-item-title {
+    color: var(--text-normal);
+  }
+
+  /* Add styles for the top menu */
+  .top-menu {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: fixed; /* Make the menu fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  .top-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+  }
+
+  .top-menu a:hover {
+    background-color: #575757;
+  }
+
+  /* Add padding to the body to prevent content from being hidden under the menu */
+  body {
+    padding-top: 50px; /* Adjust based on the height of the menu */
+  }
+</style>

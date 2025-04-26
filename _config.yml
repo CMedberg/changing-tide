@@ -1,11 +1,29 @@
 title: När Tidvattnet Vänder
 description: Vår Dungeons & Dragons-kampanj i Véradis.
 markdown: kramdown
+# source: Changing Tides
+permalink: pretty
 # theme: minima
 # remote_theme: jeremyboggs/5e
 # remote_theme: pages-themes/architect@v0.1.1
 # plugins:
-#   - jekyll-remote-theme
-sass:
-  sass_dir: _sass
-  style: compressed
+# - jekyll-remote-theme
+# - jekyll-redirect-from
+# _includes:
+#   - head.html
+exclude:
+# - _assets
+#   - Gemfile
+#   - Gemfile.lock
+#   - README.md
+#   - _config.yml
+#   - _posts
+#   - _sass
+#   - .gitignore
+#   - .jekyll-cache
+#   - .jekyll-metadata
+#   - .ruby-version
+#   - .ruby-gemset
+# sass:
+#   sass_dir: _sass
+#   style: compressed

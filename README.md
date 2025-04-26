@@ -8,3 +8,15 @@ bundle install
 #Lastly
 bundle exec jekyll serve --livereload
 ```
+
+## Permalinks
+
+### Redirect
+
+```html
+---
+permalink: /
+redirect_from:
+  - /Intro.html
+---
+```
