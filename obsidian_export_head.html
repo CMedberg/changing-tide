@@ -31,9 +31,18 @@
   .top-menu a:hover {
     background-color: #575757;
   }
-
-  /* Add padding to the body to prevent content from being hidden under the menu */
-  body {
-    padding-top: 50px; /* Adjust based on the height of the menu */
-  }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded");
+    const elements = document.querySelectorAll(".tree-item-title");
+    console.log("Found elements:", elements);
+
+    for (const el of elements) {
+      if (el.innerHTML.includes("assets")) {
+        el.style = "display: none !important;";
+        console.log("Hiding element:", el);
+      }
+    }
+  });
+</script>
