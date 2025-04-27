@@ -31,6 +31,12 @@
   .top-menu a:hover {
     background-color: #575757;
   }
+
+  body .heading-wrapper.is-collapsed > .heading::after {
+    display: block !important;
+    margin-left: 0 !important;
+    content: "" !important;
+  }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
