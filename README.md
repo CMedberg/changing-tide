@@ -1,28 +1,9 @@
 ### The Changing Tide
 
-This is the boys DnD compaign.
+The boys DnD compaign in Véradis.
 
 [The Changing Tide](https://cmedberg.github.io/changing-tide/)
 
-To run:
+This repo is hosted on Github Pages and are based on [Obsidian](https://obsidian.md/) vault using the [HTML webpage Export](https://github.com/KosmosisDire/obsidian-webpage-export) plugin.
 
-```sh
-sudo apt update && sudo apt install ruby-full build-essential zlib1g-dev
-gem install bundler
-bundle install
-
-#Lastly
-bundle exec jekyll serve --livereload
-```
-
-## Permalinks
-
-### Redirect
-
-```html
----
-permalink: /
-redirect_from:
-  - /Intro.html
----
-```
+#### To use:
