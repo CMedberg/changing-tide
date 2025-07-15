@@ -78,6 +78,7 @@ const shapeEditModalState = { isDrawing: false, drawingValue: 0 };
 const itemCreatorForm = document.getElementById("item-creator-form");
 const itemNameInput = document.getElementById("itemName");
 const itemDescriptionInput = document.getElementById("itemDescription");
+const itemImageUrlInput = document.getElementById("itemImageUrl");
 const itemBaseWeightInput = document.getElementById("itemBaseWeight");
 const itemPriceCPInput = document.getElementById("itemPriceCP");
 const itemPriceSPInput = document.getElementById("itemPriceSP");
@@ -321,6 +322,48 @@ function showAlert(message) {
 function hideTooltip() {
   itemTooltip.classList.remove("visible");
   itemTooltip.classList.add("hidden");
+}
+
+function renderTooltip(event, element, item) {
+  const itemWeight =
+    item.shape.flat().filter((c) => c === 1).length * WEIGHT_PER_SQUARE;
+  const category = item.category || "Uncategorized";
+
+  const imageElement = `
+    <img 
+        src="${item.imageUrl || "https://via.placeholder.com/150"}" 
+        alt="${item.name}" 
+        class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
+        onclick="this.classList.toggle('enlarged-tooltip-image')">`;
+
+  element.innerHTML = `
+    <div class="flex items-start">
+        <div>
+            <h4 class="font-bold text-base mb-1">${item.name}</h4>
+            <p class="text-xs text-gray-400 mb-2">${category}</p>
+            <p class="text-sm mb-2">${item.description || "No description."}</p>
+            <p class="text-sm mb-2">Weight: ${itemWeight.toFixed(1)} lbs</p>
+            <p class="text-sm">Price: ${formatPrice(item.price)}</p>
+        </div>
+        ${item.imageUrl ? imageElement : ""}
+    </div>`;
+
+  element.classList.add("visible");
+  element.classList.remove("hidden");
+
+  // If same item is hovered, do not reposition tooltip
+  if (element.dataset.currentId === item.id) return;
+  element.dataset.currentId = item.id;
+
+  // Position the tooltip relative to the mouse cursor
+  let tooltipX = event.clientX + window.scrollX - element.offsetWidth / 2;
+  let tooltipY = event.clientY + window.scrollY - element.offsetHeight - 10;
+
+  if (tooltipX < 0) tooltipX = 16;
+  if (tooltipY < 0) tooltipY = 16;
+
+  element.style.left = `${tooltipX}px`;
+  element.style.top = `${tooltipY}px`;
 }
 
 // --- Generic Modal Functions (Refactored) ---
@@ -1348,44 +1391,6 @@ function updateGenericCalculatedWeight(inputElement, shapeMatrix) {
   inputElement.value = (occupiedCells * WEIGHT_PER_SQUARE).toFixed(1);
 }
 
-function renderTooltip(event, element, item) {
-  const itemWeight =
-    item.shape.flat().filter((c) => c === 1).length * WEIGHT_PER_SQUARE;
-  const imageUrl =
-    item.imageUrl ||
-    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F7e%2Fec%2Fe2%2F7eece2dfd12eedb20f081669bd847022.jpg&f=1&nofb=1&ipt=2311a54791a0075622150689abf10f3d8800f3b72ac05ed0e5f479fa3e32db9d";
-  element.innerHTML = `
-    <div class="flex items-start">
-    <div>
-    <h4 class="font-bold text-base mb-1">${item.name}</h4>
-    <p class="text-xs text-gray-400 mb-2">${
-      item.category || "Uncategorized"
-    }</p>
-        <p class="text-sm mb-2">${item.description || "No description."}</p>
-        <p class="text-sm mb-2">Weight: ${itemWeight.toFixed(1)} lbs</p>
-        <p class="text-sm">Price: ${formatPrice(item.price)}</p>
-        </div>
-        <img 
-        src="${imageUrl || "https://via.placeholder.com/150"}" 
-        alt="${item.name}" 
-        class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
-        onclick="this.classList.toggle('enlarged-tooltip-image')">
-    </div>`;
-
-  element.classList.add("visible");
-  element.classList.remove("hidden");
-
-  // Position the tooltip relative to the mouse cursor
-  let tooltipX = event.clientX + window.scrollX - element.offsetWidth / 2;
-  let tooltipY = event.clientY + window.scrollY - element.offsetHeight - 10;
-
-  if (tooltipX < 0) tooltipX = 16;
-  if (tooltipY < 0) tooltipY = 16;
-
-  element.style.left = `${tooltipX}px`;
-  element.style.top = `${tooltipY}px`;
-}
-
 function renderAvailableItems() {
   availableItemsList.innerHTML = "";
   const filteredItems = availableItems
@@ -1475,7 +1480,14 @@ function renderAvailableItems() {
           renderTooltip(e, itemTooltip, item);
         });
 
-        itemDiv.addEventListener("mouseout", hideTooltip);
+        itemTooltip.addEventListener("mouseover", (e) => {
+          renderTooltip(e, itemTooltip, item);
+        });
+
+        itemDiv.addEventListener("mouseout", (e) => {
+          hideTooltip();
+        });
+
         itemDiv.addEventListener("contextmenu", (e) => {
           e.preventDefault();
           contextMenuAvailableItemId = item.id;
@@ -1829,6 +1841,7 @@ document.addEventListener("DOMContentLoaded", () => {
     availableItems.push({
       id: generateUniqueId(),
       name,
+      imageUrl: itemImageUrlInput.value.trim() || "",
       description: itemDescriptionInput.value.trim(),
       baseWeight: occupiedCells * WEIGHT_PER_SQUARE,
       price: {

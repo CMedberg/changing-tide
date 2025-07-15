@@ -20,9 +20,7 @@
       id="app-root"
       class="min-h-screen bg-gray-900 p-8 flex flex-col items-center"
     >
-      <h1
-        class="text-4xl font-bold text-gray-100 mb-8 rounded-lg p-3 bg-gray-800 shadow-lg"
-      >
+      <h1 class="text-4xl font-bold text-gray-100 mb-8 rounded-lg p-3 bg-gray-800 shadow-lg">
         Inventory Manager
       </h1>
 
@@ -96,6 +94,20 @@
                 id="itemName"
                 class="mt-1 block w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-gray-100"
                 placeholder="e.g., Health Potion"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="itemImageUrl"
+                class="block text-sm font-medium text-gray-300 mb-1"
+                >Item Image</label
+              >
+              <input
+                type="text"
+                id="itemImageUrl"
+                class="mt-1 block w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-gray-100"
+                placeholder="https://www.image.com/your-image-url.png"
                 required
               />
             </div>
