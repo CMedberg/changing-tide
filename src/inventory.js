@@ -1348,6 +1348,44 @@ function updateGenericCalculatedWeight(inputElement, shapeMatrix) {
   inputElement.value = (occupiedCells * WEIGHT_PER_SQUARE).toFixed(1);
 }
 
+function renderTooltip(event, element, item) {
+  const itemWeight =
+    item.shape.flat().filter((c) => c === 1).length * WEIGHT_PER_SQUARE;
+  const imageUrl =
+    item.imageUrl ||
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F7e%2Fec%2Fe2%2F7eece2dfd12eedb20f081669bd847022.jpg&f=1&nofb=1&ipt=2311a54791a0075622150689abf10f3d8800f3b72ac05ed0e5f479fa3e32db9d";
+  element.innerHTML = `
+    <div class="flex items-start">
+    <div>
+    <h4 class="font-bold text-base mb-1">${item.name}</h4>
+    <p class="text-xs text-gray-400 mb-2">${
+      item.category || "Uncategorized"
+    }</p>
+        <p class="text-sm mb-2">${item.description || "No description."}</p>
+        <p class="text-sm mb-2">Weight: ${itemWeight.toFixed(1)} lbs</p>
+        <p class="text-sm">Price: ${formatPrice(item.price)}</p>
+        </div>
+        <img 
+        src="${imageUrl || "https://via.placeholder.com/150"}" 
+        alt="${item.name}" 
+        class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
+        onclick="this.classList.toggle('enlarged-tooltip-image')">
+    </div>`;
+
+  element.classList.add("visible");
+  element.classList.remove("hidden");
+
+  // Position the tooltip relative to the mouse cursor
+  let tooltipX = event.clientX + window.scrollX - element.offsetWidth / 2;
+  let tooltipY = event.clientY + window.scrollY - element.offsetHeight - 10;
+
+  if (tooltipX < 0) tooltipX = 16;
+  if (tooltipY < 0) tooltipY = 16;
+
+  element.style.left = `${tooltipX}px`;
+  element.style.top = `${tooltipY}px`;
+}
+
 function renderAvailableItems() {
   availableItemsList.innerHTML = "";
   const filteredItems = availableItems
@@ -1434,33 +1472,9 @@ function renderAvailableItems() {
         itemDiv.addEventListener("dragend", handleDragEnd);
 
         itemDiv.addEventListener("mouseover", (e) => {
-          const itemWeight =
-            item.shape.flat().filter((c) => c === 1).length * WEIGHT_PER_SQUARE;
-          itemTooltip.innerHTML = `
-                  <h4 class="font-bold text-base mb-1">${item.name}</h4>
-                  <p class="text-xs text-gray-400 mb-2">${
-                    item.category || "Uncategorized"
-                  }</p>
-                  <p class="text-sm mb-2">${
-                    item.description || "No description."
-                  }</p>
-                  <p class="text-sm mb-2">Weight: ${itemWeight.toFixed(
-                    1
-                  )} lbs</p>
-                  <p class="text-sm">Price: ${formatPrice(item.price)}</p>`;
-          itemTooltip.classList.add("visible");
-          itemTooltip.classList.remove("hidden");
-
-          let tooltipX =
-            e.clientX + window.scrollX - itemTooltip.offsetWidth / 2;
-          let tooltipY =
-            e.clientY + window.scrollY - itemTooltip.offsetHeight - 10;
-          if (tooltipX < 0) tooltipX = 16;
-          if (tooltipY < 0) tooltipY = 16;
-
-          itemTooltip.style.left = `${tooltipX}px`;
-          itemTooltip.style.top = `${tooltipY}px`;
+          renderTooltip(e, itemTooltip, item);
         });
+
         itemDiv.addEventListener("mouseout", hideTooltip);
         itemDiv.addEventListener("contextmenu", (e) => {
           e.preventDefault();
@@ -1527,39 +1541,9 @@ function renderBackpackGrid() {
     placedItemDiv.addEventListener("dragend", handleDragEnd);
 
     placedItemDiv.addEventListener("mouseover", (e) => {
-      const itemBaseData = availableItems.find((a) => a.id === pItem.itemId);
-      if (!itemBaseData) return;
-
-      const occupiedCells = pItem.shape
-        .flat()
-        .filter((cell) => cell === 1).length;
-      const itemCalculatedWeight = occupiedCells * WEIGHT_PER_SQUARE;
-
-      itemTooltip.innerHTML = `
-                <h4 class="font-bold text-base mb-1">${itemBaseData.name}</h4>
-                <p class="text-xs text-gray-400 mb-2">${
-                  itemBaseData.category
-                }</p>
-                <p class="text-sm mb-2">${
-                  itemBaseData.description || "No description."
-                }</p>
-                <p class="text-sm mb-2">Total Weight: ${itemCalculatedWeight.toFixed(
-                  1
-                )} lbs (from shape)</p>
-                <p class="text-sm">Price: ${formatPrice(itemBaseData.price)}</p>
-            `;
-      itemTooltip.classList.add("visible");
-      itemTooltip.classList.remove("hidden");
-
-      // Position the tooltip relative to the mouse cursor
-      let tooltipX = e.clientX + window.scrollX - itemTooltip.offsetWidth / 2;
-      let tooltipY = e.clientY + window.scrollY - itemTooltip.offsetHeight - 10;
-
-      if (tooltipX < 0) tooltipX = 16;
-      if (tooltipY < 0) tooltipY = 16;
-
-      itemTooltip.style.left = `${tooltipX}px`;
-      itemTooltip.style.top = `${tooltipY}px`;
+      const item = availableItems.find((a) => a.id === pItem.itemId);
+      if (!item) return;
+      renderTooltip(e, itemTooltip, item);
     });
 
     placedItemDiv.addEventListener("mouseout", () => {
