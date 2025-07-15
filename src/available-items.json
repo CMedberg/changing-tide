@@ -1,0 +1,1551 @@
+{
+  "availableItems": [
+    {
+      "id": "_ac1dvial1lb",
+      "name": "Acid (vial)",
+      "category": "Adventuring Gear",
+      "description": "A vial of corrosive liquid that can be thrown as an improvised weapon, dealing 2d6 acid damage on a direct hit.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#a3e635",
+      "width": 1,
+      "height": 2,
+      "shape": [[1], [1]]
+    },
+    {
+      "id": "_alchf1r31lb",
+      "name": "Alchemist's Fire (flask)",
+      "category": "Adventuring Gear",
+      "description": "A flask of volatile liquid that ignites when exposed to air. On a hit, the target takes 1d4 fire damage at the start of each of its turns.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#f97316",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [0, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_arr0wpack1lb",
+      "name": "Arrows (20)",
+      "category": "Ammunition",
+      "description": "A bundle of 20 arrows, fletched for stability and tipped with arrowheads.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#ca8a04",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_xbowb0ltspack1-5lb",
+      "name": "Crossbow Bolts (20)",
+      "category": "Ammunition",
+      "description": "A bundle of 20 short, heavy projectiles for use with a crossbow.",
+      "baseWeight": 1.5,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#78350f",
+      "width": 3,
+      "height": 1,
+      "shape": [[1, 1, 1]]
+    },
+    {
+      "id": "_blbrngs2lb",
+      "name": "Ball Bearings (bag of 1,000)",
+      "category": "Adventuring Gear",
+      "description": "A small pouch containing 1,000 tiny, hard metal balls. Can cover a 10-foot square, making the surface difficult terrain.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#5a5a63",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [1, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_b3dr0ll7lb",
+      "name": "Bedroll",
+      "category": "Adventuring Gear",
+      "description": "A simple roll of bedding, easily carried and providing a comfortable place to rest during travels.",
+      "baseWeight": 7,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#4d7c0f",
+      "width": 7,
+      "height": 2,
+      "shape": [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_b3ll0-5lb",
+      "name": "Bell",
+      "category": "Adventuring Gear",
+      "description": "A small, handheld brass bell that creates a clear ringing sound when shaken.",
+      "baseWeight": 0.5,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#facc15",
+      "width": 1,
+      "height": 1,
+      "shape": [[1]]
+    },
+    {
+      "id": "_blnkt3lb",
+      "name": "Blanket",
+      "category": "Adventuring Gear",
+      "description": "A warm, woolen blanket, often used for an extra layer of warmth when resting.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 5, "gp": 0, "pp": 0 },
+      "color": "#be185d",
+      "width": 3,
+      "height": 2,
+      "shape": [
+        [1, 1, 1],
+        [1, 1, 1]
+      ]
+    },
+    {
+      "id": "_blkn tackle5lb",
+      "name": "Block and Tackle",
+      "category": "Adventuring Gear",
+      "description": "A set of pulleys and rope designed to lift heavy objects. It multiplies the user's effective lifting strength by four.",
+      "baseWeight": 5.5,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#71717a",
+      "width": 5,
+      "height": 3,
+      "shape": [
+        [1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1],
+        [0, 1, 0, 1, 0]
+      ]
+    },
+    {
+      "id": "_b00k5lb",
+      "name": "Book",
+      "category": "Books & Writing",
+      "description": "A bound volume with a heavy leather cover, containing lore, poetry, history, or simply blank pages.",
+      "baseWeight": 5,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#4a044e",
+      "width": 2,
+      "height": 5,
+      "shape": [
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_caltrps2lb",
+      "name": "Caltrops (bag of 20)",
+      "category": "Adventuring Gear",
+      "description": "A small bag of four-pronged iron spikes designed to injure and slow down pursuers when scattered on the ground.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#4b5563",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [1, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_cndl0-5lb",
+      "name": "Candle",
+      "category": "Adventuring Gear",
+      "description": "A wax candle that sheds bright light in a 5-foot radius and dim light for an additional 5 feet for 1 hour.",
+      "baseWeight": 0.5,
+      "price": { "cp": 1, "sp": 0, "gp": 0, "pp": 0 },
+      "color": "#fef08a",
+      "width": 1,
+      "height": 1,
+      "shape": [[1]]
+    },
+    {
+      "id": "_chain10ft10lb",
+      "name": "Chain (10 feet)",
+      "category": "Adventuring Gear",
+      "description": "A 10-foot length of heavy iron chain. Can be burst with a successful DC 20 Strength check.",
+      "baseWeight": 10,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#71717a",
+      "width": 5,
+      "height": 4,
+      "shape": [
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_clmbrskt12lb",
+      "name": "Climber's Kit",
+      "category": "Adventuring Gear",
+      "description": "A kit that includes special pitons, boot tips, gloves, and a harness. Allows you to add your proficiency bonus to checks made to climb.",
+      "baseWeight": 12,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#ca8a04",
+      "width": 6,
+      "height": 4,
+      "shape": [
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_crowbar5lb",
+      "name": "Crowbar",
+      "category": "Adventuring Gear",
+      "description": "A heavy iron bar with a flattened end, used as a lever. Grants advantage on Strength checks involving leverage.",
+      "baseWeight": 5,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#475569",
+      "width": 3,
+      "height": 7,
+      "shape": [
+        [1, 1, 1],
+        [1, 0, 1],
+        [1, 0, 0],
+        [1, 0, 0],
+        [1, 0, 0],
+        [1, 0, 0],
+        [1, 0, 0]
+      ]
+    },
+    {
+      "id": "_hlysmbl2lb",
+      "name": "Holy Symbol, Amulet",
+      "category": "Holy Symbol",
+      "description": "A silver amulet depicting the symbol of a deity, worn to channel divine power.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#e2e8f0",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [1, 1],
+        [0, 0]
+      ]
+    },
+    {
+      "id": "_hlywtr4lb",
+      "name": "Holy Water (flask)",
+      "category": "Holy Symbol",
+      "description": "Water blessed by a priest. A flask can be thrown to deal 2d6 radiant damage to fiends or undead.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#7dd3fc",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [0, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_hntngtrp25lb",
+      "name": "Hunting Trap",
+      "category": "Adventuring Gear",
+      "description": "A heavy mechanical trap with steel jaws designed to clamp down on a creature that steps on its pressure plate.",
+      "baseWeight": 25,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#4b5563",
+      "width": 12,
+      "height": 6,
+      "shape": [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0],
+        [1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_lck1lb",
+      "name": "Lock",
+      "category": "Adventuring Gear",
+      "description": "A sturdy metal lock, complete with a key. A character proficient with thieves' tools can pick it.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#eab308",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_msskt1lb",
+      "name": "Mess Kit",
+      "category": "Adventuring Gear",
+      "description": "A tin box containing a cup and simple cutlery. It keeps your food and drink separate from your other gear.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 2, "gp": 0, "pp": 0 },
+      "color": "#d1d5db",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_oilflsk1lb",
+      "name": "Oil (flask)",
+      "category": "Adventuring Gear",
+      "description": "A flask of viscous, flammable oil. Can be used to light a fire, cover a 5-foot square to create difficult terrain, or be thrown to douse a target.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 1, "gp": 0, "pp": 0 },
+      "color": "#422006",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [0, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_qvvr1lb",
+      "name": "Quiver",
+      "category": "Containers",
+      "description": "A leather container for holding arrows or crossbow bolts. Can hold up to 20 arrows.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#78350f",
+      "width": 1,
+      "height": 2,
+      "shape": [[1], [1]]
+    },
+    {
+      "id": "_spyglss1lb",
+      "name": "Spyglass",
+      "category": "Adventuring Gear",
+      "description": "A collapsible tube with lenses for magnifying distant objects, making them appear twice as large.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 1000, "pp": 0 },
+      "color": "#a16207",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_tnt2prsn20lb",
+      "name": "Tent, Two-Person",
+      "category": "Adventuring Gear",
+      "description": "A simple canvas tent that provides shelter from the elements for up to two medium creatures.",
+      "baseWeight": 20,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#166534",
+      "width": 11,
+      "height": 6,
+      "shape": [
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+        [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_wtrskn5lb",
+      "name": "Waterskin",
+      "category": "Containers",
+      "description": "A sealed leather bag used to carry liquid, usually water. Holds up to 4 pints.",
+      "baseWeight": 5,
+      "price": { "cp": 0, "sp": 2, "gp": 0, "pp": 0 },
+      "color": "#0891b2",
+      "width": 3,
+      "height": 4,
+      "shape": [
+        [1, 0, 0],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+      ]
+    },
+    {
+      "id": "_clbwpn2lb",
+      "name": "Club",
+      "category": "Weapons (Simple Melee)",
+      "description": "A simple but effective bludgeoning weapon, essentially a heavy piece of wood.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 1, "gp": 0, "pp": 0 },
+      "color": "#92400e",
+      "width": 1,
+      "height": 4,
+      "shape": [[1], [1], [1], [1]]
+    },
+    {
+      "id": "_dgrwpn1lb",
+      "name": "Dagger",
+      "category": "Weapons (Simple Melee)",
+      "description": "A small, sharp blade with a pointed tip, good for close quarters or as a thrown weapon.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#f87171",
+      "width": 1,
+      "height": 2,
+      "shape": [[1], [1]]
+    },
+    {
+      "id": "_grtclb10lb",
+      "name": "Greatclub",
+      "category": "Weapons (Simple Melee)",
+      "description": "A massive, two-handed club, often studded with nails or wrapped in metal.",
+      "baseWeight": 10,
+      "price": { "cp": 0, "sp": 2, "gp": 0, "pp": 0 },
+      "color": "#92400e",
+      "width": 3,
+      "height": 8,
+      "shape": [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_hndax2lb",
+      "name": "Handaxe",
+      "category": "Weapons (Simple Melee)",
+      "description": "A small axe that can be wielded with one hand or thrown effectively.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#f87171",
+      "width": 2,
+      "height": 3,
+      "shape": [
+        [1, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    },
+    {
+      "id": "_jvln2lb",
+      "name": "Javelin",
+      "category": "Weapons (Simple Melee)",
+      "description": "A light spear designed primarily to be thrown.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 5, "gp": 0, "pp": 0 },
+      "color": "#fdba74",
+      "width": 1,
+      "height": 4,
+      "shape": [[1], [1], [1], [1]]
+    },
+    {
+      "id": "_lghtmr2lb",
+      "name": "Light Hammer",
+      "category": "Weapons (Simple Melee)",
+      "description": "A small hammer that can be used as a melee weapon or thrown.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#f87171",
+      "width": 2,
+      "height": 3,
+      "shape": [
+        [1, 1],
+        [1, 0],
+        [1, 0]
+      ]
+    },
+    {
+      "id": "_mcwpn4lb",
+      "name": "Mace",
+      "category": "Weapons (Simple Melee)",
+      "description": "A bludgeoning weapon with a heavy head on the end of a handle, designed to crush armor.",
+      "baseWeight": 4,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#525252",
+      "width": 3,
+      "height": 6,
+      "shape": [
+        [0, 1, 0],
+        [1, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_qrtrstff4lb",
+      "name": "Quarterstaff",
+      "category": "Weapons (Simple Melee)",
+      "description": "A long, sturdy staff of wood, useful as a walking aid and a versatile weapon.",
+      "baseWeight": 4,
+      "price": { "cp": 0, "sp": 2, "gp": 0, "pp": 0 },
+      "color": "#92400e",
+      "width": 1,
+      "height": 8,
+      "shape": [[1], [1], [1], [1], [1], [1], [1], [1]]
+    },
+    {
+      "id": "_sckl2lb",
+      "name": "Sickle",
+      "category": "Weapons (Simple Melee)",
+      "description": "A tool with a curved blade, used for harvesting but also effective as a weapon.",
+      "baseWeight": 2.5,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#f87171",
+      "width": 3,
+      "height": 4,
+      "shape": [
+        [0, 1, 1],
+        [1, 0, 0],
+        [1, 0, 0],
+        [1, 0, 0]
+      ]
+    },
+    {
+      "id": "_sprwpn3lb",
+      "name": "Spear",
+      "category": "Weapons (Simple Melee)",
+      "description": "A pole weapon with a pointed head, can be used one-handed or thrown.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#fdba74",
+      "width": 1,
+      "height": 6,
+      "shape": [[1], [1], [1], [1], [1], [1]]
+    },
+    {
+      "id": "_ltxbow8lb",
+      "name": "Light Crossbow",
+      "category": "Weapons (Simple Ranged)",
+      "description": "A ranged weapon that is easier to load and handle than its heavier counterpart.",
+      "baseWeight": 5,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#fdba74",
+      "width": 6,
+      "height": 4,
+      "shape": [
+        [0, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 1],
+        [0, 0, 1, 1, 0, 0],
+        [0, 0, 1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_drtwpn0-25lb",
+      "name": "Dart",
+      "category": "Weapons (Simple Ranged)",
+      "description": "A small, weighted projectile with a sharp point, designed for throwing.",
+      "baseWeight": 0.5,
+      "price": { "cp": 5, "sp": 0, "gp": 0, "pp": 0 },
+      "color": "#fdba74",
+      "width": 1,
+      "height": 1,
+      "shape": [[1]]
+    },
+    {
+      "id": "_shrtbw2lb",
+      "name": "Shortbow",
+      "category": "Weapons (Simple Ranged)",
+      "description": "A light and flexible bow, easier to handle than a longbow, suitable for skirmishing.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#fdba74",
+      "width": 2,
+      "height": 3,
+      "shape": [
+        [1, 0],
+        [1, 1],
+        [1, 0]
+      ]
+    },
+    {
+      "id": "_slngwpn0lb",
+      "name": "Sling",
+      "category": "Weapons (Simple Ranged)",
+      "description": "A simple weapon consisting of a leather strap used to hurl bullets or stones.",
+      "baseWeight": 0.5,
+      "price": { "cp": 0, "sp": 1, "gp": 0, "pp": 0 },
+      "color": "#854d0e",
+      "width": 1,
+      "height": 1,
+      "shape": [[1]]
+    },
+    {
+      "id": "_bttlx4lb",
+      "name": "Battleaxe",
+      "category": "Weapons (Martial Melee)",
+      "description": "A versatile axe that can be wielded with one or two hands.",
+      "baseWeight": 4,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#ef4444",
+      "width": 3,
+      "height": 4,
+      "shape": [
+        [1, 1, 1],
+        [1, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_flail2lb",
+      "name": "Flail",
+      "category": "Weapons (Martial Melee)",
+      "description": "A weapon consisting of a striking head attached to a handle by a flexible chain.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#525252",
+      "width": 2,
+      "height": 3,
+      "shape": [
+        [1, 0],
+        [1, 0],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_glaive6lb",
+      "name": "Glaive",
+      "category": "Weapons (Martial Melee)",
+      "description": "A long polearm with a single-edged blade at the tip, known for its reach.",
+      "baseWeight": 6,
+      "price": { "cp": 0, "sp": 0, "gp": 20, "pp": 0 },
+      "color": "#ef4444",
+      "width": 2,
+      "height": 9,
+      "shape": [
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0]
+      ]
+    },
+    {
+      "id": "_grtaxe7lb",
+      "name": "Greataxe",
+      "category": "Weapons (Martial Melee)",
+      "description": "A large, two-handed axe known for its devastating chopping power.",
+      "baseWeight": 7,
+      "price": { "cp": 0, "sp": 0, "gp": 30, "pp": 0 },
+      "color": "#ef4444",
+      "width": 5,
+      "height": 6,
+      "shape": [
+        [0, 0, 1, 0, 0],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_grtswrd6lb",
+      "name": "Greatsword",
+      "category": "Weapons (Martial Melee)",
+      "description": "A massive two-handed sword, valued for its long reach and heavy cutting blows.",
+      "baseWeight": 5.5,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#ef4444",
+      "width": 3,
+      "height": 9,
+      "shape": [
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [1, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_hlbrd6lb",
+      "name": "Halberd",
+      "category": "Weapons (Martial Melee)",
+      "description": "A two-handed pole weapon with an axe blade and a spike mounted on the end.",
+      "baseWeight": 6,
+      "price": { "cp": 0, "sp": 0, "gp": 20, "pp": 0 },
+      "color": "#ef4444",
+      "width": 3,
+      "height": 8,
+      "shape": [
+        [0, 1, 0],
+        [1, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_lncwpn6lb",
+      "name": "Lance",
+      "category": "Weapons (Martial Melee)",
+      "description": "A long weapon for thrusting, designed for use while mounted.",
+      "baseWeight": 6,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#fdba74",
+      "width": 1,
+      "height": 12,
+      "shape": [[1], [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], [1]]
+    },
+    {
+      "id": "_lngswrd3lb",
+      "name": "Longsword",
+      "category": "Weapons (Martial Melee)",
+      "description": "A versatile and sharp-edged sword that can be wielded with one or two hands.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 0, "gp": 15, "pp": 0 },
+      "color": "#ef4444",
+      "width": 1,
+      "height": 6,
+      "shape": [[1], [1], [1], [1], [1], [1]]
+    },
+    {
+      "id": "_maul10lb",
+      "name": "Maul",
+      "category": "Weapons (Martial Melee)",
+      "description": "A massive two-handed hammer, designed for maximum blunt force trauma.",
+      "baseWeight": 8,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#525252",
+      "width": 5,
+      "height": 8,
+      "shape": [
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_mrngstr4lb",
+      "name": "Morningstar",
+      "category": "Weapons (Martial Melee)",
+      "description": "A brutal weapon consisting of a spiked head mounted on a shaft.",
+      "baseWeight": 4,
+      "price": { "cp": 0, "sp": 0, "gp": 15, "pp": 0 },
+      "color": "#525252",
+      "width": 3,
+      "height": 7,
+      "shape": [
+        [0, 1, 0],
+        [1, 0, 1],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_pikewpn18lb",
+      "name": "Pike",
+      "category": "Weapons (Martial Melee)",
+      "description": "An extremely long pole weapon used by infantry formations, requiring two hands.",
+      "baseWeight": 18,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#fdba74",
+      "width": 3,
+      "height": 17,
+      "shape": [
+        [0, 0, 1],
+        [0, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1],
+        [0, 1, 1]
+      ]
+    },
+    {
+      "id": "_rprwpn2lb",
+      "name": "Rapier",
+      "category": "Weapons (Martial Melee)",
+      "description": "A slender, sharply pointed sword, ideal for thrusting and fencing.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#ef4444",
+      "width": 1,
+      "height": 4,
+      "shape": [[1], [1], [1], [1]]
+    },
+    {
+      "id": "_scmtr2lb",
+      "name": "Scimitar",
+      "category": "Weapons (Martial Melee)",
+      "description": "A light, curved, single-edged sword, known for its slashing attacks.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#ef4444",
+      "width": 4,
+      "height": 6,
+      "shape": [
+        [0, 0, 0, 1],
+        [0, 0, 1, 0],
+        [0, 1, 0, 0],
+        [1, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 0, 0, 0]
+      ]
+    },
+    {
+      "id": "_shrtswrd2lb",
+      "name": "Shortsword",
+      "category": "Weapons (Martial Melee)",
+      "description": "A light, double-edged sword, easy to handle and effective for quick strikes.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#ef4444",
+      "width": 1,
+      "height": 4,
+      "shape": [[1], [1], [1], [1]]
+    },
+    {
+      "id": "_trdntwpn4lb",
+      "name": "Trident",
+      "category": "Weapons (Martial Melee)",
+      "description": "A three-pronged spear that can be used for thrusting in melee or thrown.",
+      "baseWeight": 4,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#0ea5e9",
+      "width": 5,
+      "height": 4,
+      "shape": [
+        [1, 0, 1, 0, 1],
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_wrpck2lb",
+      "name": "War Pick",
+      "category": "Weapons (Martial Melee)",
+      "description": "A weapon with a sharp, curved spike designed to puncture heavy armor.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#ef4444",
+      "width": 2,
+      "height": 3,
+      "shape": [
+        [1, 1],
+        [1, 0],
+        [1, 0]
+      ]
+    },
+    {
+      "id": "_wrhmmr2lb",
+      "name": "Warhammer",
+      "category": "Weapons (Martial Melee)",
+      "description": "A versatile hammer with a heavy head, useful for both bludgeoning and piercing attacks.",
+      "baseWeight": 5,
+      "price": { "cp": 0, "sp": 0, "gp": 15, "pp": 0 },
+      "color": "#525252",
+      "width": 3,
+      "height": 7,
+      "shape": [
+        [0, 1, 0],
+        [0, 1, 1],
+        [1, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0]
+      ]
+    },
+    {
+      "id": "_whpwpn3lb",
+      "name": "Whip",
+      "category": "Weapons (Martial Melee)",
+      "description": "A long, flexible lash with a handle, notable for its extended reach.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#78350f",
+      "width": 4,
+      "height": 3,
+      "shape": [
+        [0, 0, 1, 1],
+        [0, 1, 1, 0],
+        [1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_blwgn1lb",
+      "name": "Blowgun",
+      "category": "Weapons (Martial Ranged)",
+      "description": "A long tube through which a needle-like dart can be propelled by breath.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#fdba74",
+      "width": 1,
+      "height": 2,
+      "shape": [[1], [1]]
+    },
+    {
+      "id": "_hndxbow3lb",
+      "name": "Hand Crossbow",
+      "category": "Weapons (Martial Ranged)",
+      "description": "A small crossbow that can be fired with one hand.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 0, "gp": 75, "pp": 0 },
+      "color": "#fdba74",
+      "width": 5,
+      "height": 3,
+      "shape": [
+        [0, 1, 0, 1, 0],
+        [1, 0, 1, 0, 1],
+        [0, 0, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_hvyxbow18lb",
+      "name": "Heavy Crossbow",
+      "category": "Weapons (Martial Ranged)",
+      "description": "A powerful but slow-to-load ranged weapon that fires bolts with deadly force.",
+      "baseWeight": 18,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#fdba74",
+      "width": 9,
+      "height": 7,
+      "shape": [
+        [0, 1, 1, 0, 0, 0, 1, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 1, 1, 1, 0, 1, 1],
+        [1, 1, 0, 1, 1, 1, 0, 1, 1],
+        [0, 0, 0, 1, 1, 1, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1, 0, 0, 0]
+      ]
+    },
+    {
+      "id": "_lngbw2lb",
+      "name": "Longbow",
+      "category": "Weapons (Martial Ranged)",
+      "description": "A large, powerful bow that requires significant strength to use effectively, known for its long range.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#fdba74",
+      "width": 2,
+      "height": 4,
+      "shape": [
+        [1, 0],
+        [1, 1],
+        [1, 1],
+        [1, 0]
+      ]
+    },
+    {
+      "id": "_netwpn3lb",
+      "name": "Net",
+      "category": "Weapons (Martial Ranged)",
+      "description": "A thrown weapon that can entangle a foe, restricting their movement.",
+      "baseWeight": 3,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#fdba74",
+      "width": 4,
+      "height": 3,
+      "shape": [
+        [1, 0, 1, 0],
+        [0, 1, 0, 1],
+        [1, 0, 1, 0]
+      ]
+    },
+    {
+      "id": "_paddarmr8lb",
+      "name": "Padded Armor",
+      "category": "Armor (Light)",
+      "description": "Layers of quilted cloth, offering minimal protection but without hindering movement. Gives disadvantage on Stealth checks.",
+      "baseWeight": 8,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#a16207",
+      "width": 4,
+      "height": 5,
+      "shape": [
+        [1, 0, 0, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [0, 1, 1, 0]
+      ]
+    },
+    {
+      "id": "_lthrarmr10lb",
+      "name": "Leather Armor",
+      "category": "Armor (Light)",
+      "description": "Armor made from hardened leather, offering basic protection with minimal hindrance to movement.",
+      "baseWeight": 11,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#a16207",
+      "width": 5,
+      "height": 7,
+      "shape": [
+        [1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_stdddlthr13lb",
+      "name": "Studded Leather Armor",
+      "category": "Armor (Light)",
+      "description": "Leather armor reinforced with close-set rivets or studs, offering better protection than standard leather.",
+      "baseWeight": 14,
+      "price": { "cp": 0, "sp": 0, "gp": 45, "pp": 0 },
+      "color": "#a16207",
+      "width": 6,
+      "height": 7,
+      "shape": [
+        [1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_hdarmr12lb",
+      "name": "Hide Armor",
+      "category": "Armor (Medium)",
+      "description": "Armor crafted from the thick hides and furs of beasts, offering moderate protection.",
+      "baseWeight": 12,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#a16207",
+      "width": 6,
+      "height": 6,
+      "shape": [
+        [1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_chnshrt20lb",
+      "name": "Chain Shirt",
+      "category": "Armor (Medium)",
+      "description": "A shirt of interlocking metal rings, covering the torso while leaving the limbs free.",
+      "baseWeight": 20,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#64748b",
+      "width": 6,
+      "height": 7,
+      "shape": [
+        [1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_sclmail45lb",
+      "name": "Scale Mail",
+      "category": "Armor (Medium)",
+      "description": "A coat and leggings of leather covered with overlapping pieces of metal, like fish scales.",
+      "baseWeight": 45,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#64748b",
+      "width": 11,
+      "height": 11,
+      "shape": [
+        [1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_brstplt20lb",
+      "name": "Breastplate",
+      "category": "Armor (Medium)",
+      "description": "A solid metal plate that covers the torso, offering excellent protection for the vital organs.",
+      "baseWeight": 20,
+      "price": { "cp": 0, "sp": 0, "gp": 400, "pp": 0 },
+      "color": "#64748b",
+      "width": 7,
+      "height": 7,
+      "shape": [
+        [0, 1, 1, 0, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_hlfplt40lb",
+      "name": "Half Plate",
+      "category": "Armor (Medium)",
+      "description": "Armor consisting of shaped metal plates that cover most of the body, offering good protection.",
+      "baseWeight": 40,
+      "price": { "cp": 0, "sp": 0, "gp": 750, "pp": 0 },
+      "color": "#64748b",
+      "width": 10,
+      "height": 11,
+      "shape": [
+        [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+      ]
+    },
+    {
+      "id": "_rngmail40lb",
+      "name": "Ring Mail",
+      "category": "Armor (Heavy)",
+      "description": "Leather armor with heavy rings sewn into it, offering inferior protection to chain mail.",
+      "baseWeight": 40,
+      "price": { "cp": 0, "sp": 0, "gp": 30, "pp": 0 },
+      "color": "#9ca3af",
+      "width": 10,
+      "height": 12,
+      "shape": [
+        [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+      ]
+    },
+    {
+      "id": "_chnmail55lb",
+      "name": "Chain Mail",
+      "category": "Armor (Heavy)",
+      "description": "Made of interlocking metal rings, Chain Mail provides substantial protection against attacks.",
+      "baseWeight": 55,
+      "price": { "cp": 0, "sp": 0, "gp": 75, "pp": 0 },
+      "color": "#9ca3af",
+      "width": 12,
+      "height": 12,
+      "shape": [
+        [1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_splntarmr60lb",
+      "name": "Splint Armor",
+      "category": "Armor (Heavy)",
+      "description": "Armor made of narrow vertical strips of metal riveted to a leather backing.",
+      "baseWeight": 60,
+      "price": { "cp": 0, "sp": 0, "gp": 200, "pp": 0 },
+      "color": "#9ca3af",
+      "width": 12,
+      "height": 14,
+      "shape": [
+        [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
+      ]
+    },
+    {
+      "id": "_pltarmr65lb",
+      "name": "Plate Armor",
+      "category": "Armor (Heavy)",
+      "description": "A full suit of interlocking metal plates, offering the best possible protection.",
+      "baseWeight": 65,
+      "price": { "cp": 0, "sp": 0, "gp": 1500, "pp": 0 },
+      "color": "#9ca3af",
+      "width": 12,
+      "height": 15,
+      "shape": [
+        [1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+      ]
+    },
+    {
+      "id": "_shld6lb",
+      "name": "Shield",
+      "category": "Shields",
+      "description": "A standard wooden or metal shield, carried in one hand to intercept attacks.",
+      "baseWeight": 6,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#64748b",
+      "width": 4,
+      "height": 5,
+      "shape": [
+        [0, 1, 1, 0],
+        [1, 0, 0, 1],
+        [1, 1, 1, 1],
+        [1, 0, 0, 1],
+        [0, 1, 1, 0]
+      ]
+    },
+    {
+      "id": "_abcs2lb",
+      "name": "Abacus",
+      "category": "Tools",
+      "description": "A wooden frame with rows of wires, on which beads are slid for calculation.",
+      "baseWeight": 2,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#ca8a04",
+      "width": 2,
+      "height": 2,
+      "shape": [
+        [1, 1],
+        [1, 1]
+      ]
+    },
+    {
+      "id": "_alchmspls8lb",
+      "name": "Alchemist's Supplies",
+      "category": "Tools",
+      "description": "A kit including beakers, metal frames, and glass stirring rods for creating alchemical substances.",
+      "baseWeight": 8,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#a855f7",
+      "width": 4,
+      "height": 4,
+      "shape": [
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_brwrspls9lb",
+      "name": "Brewer's Supplies",
+      "category": "Tools",
+      "description": "A kit containing a large glass jug, hops, a siphon, and tubing for brewing beer and ale.",
+      "baseWeight": 9,
+      "price": { "cp": 0, "sp": 0, "gp": 20, "pp": 0 },
+      "color": "#f59e0b",
+      "width": 3,
+      "height": 6,
+      "shape": [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+      ]
+    },
+    {
+      "id": "_bckpck5lb",
+      "name": "Backpack",
+      "category": "Adventuring Gear",
+      "description": "A sturdy leather or canvas bag for carrying supplies, worn on the back. Can hold 1 cubic foot or 30 pounds of gear.",
+      "baseWeight": 5,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#a16207",
+      "width": 4,
+      "height": 3,
+      "shape": [
+        [1, 0, 0, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_brrl70lb",
+      "name": "Barrel",
+      "category": "Containers",
+      "description": "A large wooden barrel. Can hold 40 gallons of liquid or 4 cubic feet of solid material.",
+      "baseWeight": 70,
+      "price": { "cp": 0, "sp": 0, "gp": 2, "pp": 0 },
+      "color": "#92400e",
+      "width": 10,
+      "height": 14,
+      "shape": [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_chstwlb25lb",
+      "name": "Chest",
+      "category": "Containers",
+      "description": "A wooden chest for storing items. Can hold 12 cubic feet or 300 pounds of gear.",
+      "baseWeight": 25,
+      "price": { "cp": 0, "sp": 0, "gp": 5, "pp": 0 },
+      "color": "#92400e",
+      "width": 10,
+      "height": 5,
+      "shape": [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    {
+      "id": "_cllgrphrspls5lb",
+      "name": "Calligrapher's Supplies",
+      "category": "Tools",
+      "description": "A kit containing ink, a dozen sheets of parchment, and three quills.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 10, "pp": 0 },
+      "color": "#3f3f46",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_crpntrstls6lb",
+      "name": "Carpenter's Tools",
+      "category": "Tools",
+      "description": "A kit containing a saw, a hammer, nails, a hatchet, a square, a ruler, an adze, a plane, and a chisel.",
+      "baseWeight": 6,
+      "price": { "cp": 0, "sp": 0, "gp": 8, "pp": 0 },
+      "color": "#71717a",
+      "width": 3,
+      "height": 4,
+      "shape": [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+      ]
+    },
+    {
+      "id": "_crtrgrphrstls6lb",
+      "name": "Cartographer's Tools",
+      "category": "Tools",
+      "description": "A kit containing a quill, ink, parchment, a pair of compasses, calipers, and a ruler.",
+      "baseWeight": 6,
+      "price": { "cp": 0, "sp": 0, "gp": 15, "pp": 0 },
+      "color": "#7c2d12",
+      "width": 3,
+      "height": 4,
+      "shape": [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+      ]
+    },
+    {
+      "id": "_dmdgmstn1lb",
+      "name": "Diamond",
+      "category": "Valuables & Gems",
+      "description": "A brilliant, transparent, and exceptionally hard gemstone of immense value.",
+      "baseWeight": 0.5,
+      "price": { "cp": 0, "sp": 0, "gp": 5000, "pp": 0 },
+      "color": "#bae6fd",
+      "width": 1,
+      "height": 1,
+      "shape": [[1]]
+    },
+    {
+      "id": "_flrtrdgd1lb",
+      "name": "Flour (1 lb.)",
+      "category": "Trade Goods",
+      "description": "A small sack containing one pound of ground flour.",
+      "baseWeight": 1,
+      "price": { "cp": 2, "sp": 0, "gp": 0, "pp": 0 },
+      "color": "#f5f5f4",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_hrglss1lb",
+      "name": "Hourglass",
+      "category": "Adventuring Gear",
+      "description": "A glass instrument that measures a one-hour period when sand flows from an upper bulb to a lower one.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#fcd34d",
+      "width": 1,
+      "height": 2,
+      "shape": [[1], [1]]
+    },
+    {
+      "id": "_ptnhlng50gp",
+      "name": "Potion of Healing",
+      "category": "Potions & Poisons",
+      "description": "A vial of shimmering red liquid that restores 2d4 + 2 hit points when consumed.",
+      "baseWeight": 0.5,
+      "price": { "cp": 0, "sp": 0, "gp": 50, "pp": 0 },
+      "color": "#4ade80",
+      "width": 1,
+      "height": 1,
+      "shape": [[1]]
+    },
+    {
+      "id": "_rphemp50ft10lb",
+      "name": "Rope, Hempen (50 feet)",
+      "category": "Adventuring Gear",
+      "description": "A 50-foot coil of sturdy, thick rope.",
+      "baseWeight": 10,
+      "price": { "cp": 0, "sp": 0, "gp": 1, "pp": 0 },
+      "color": "#ca8a04",
+      "width": 6,
+      "height": 6,
+      "shape": [
+        [0, 0, 1, 1, 0, 0],
+        [0, 1, 1, 1, 1, 0],
+        [1, 1, 0, 0, 1, 1],
+        [1, 1, 0, 0, 1, 1],
+        [0, 1, 1, 1, 1, 0],
+        [0, 0, 1, 1, 0, 0]
+      ]
+    },
+    {
+      "id": "_thvstls1lb",
+      "name": "Thieves' Tools",
+      "category": "Tools",
+      "description": "A small kit containing a file, a set of lock picks, a small mirror, a pair of scissors, and pliers.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 0, "gp": 25, "pp": 0 },
+      "color": "#3f3f46",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_tndrbx1lb",
+      "name": "Tinderbox",
+      "category": "Adventuring Gear",
+      "description": "A small container holding flint, fire steel, and tinder used to kindle a flame.",
+      "baseWeight": 1,
+      "price": { "cp": 0, "sp": 5, "gp": 0, "pp": 0 },
+      "color": "#44403c",
+      "width": 2,
+      "height": 1,
+      "shape": [[1, 1]]
+    },
+    {
+      "id": "_trch1lb",
+      "name": "Torch",
+      "category": "Adventuring Gear",
+      "description": "A wooden rod tipped with cloth soaked in a flammable substance. Provides bright light for one hour.",
+      "baseWeight": 1,
+      "price": { "cp": 1, "sp": 0, "gp": 0, "pp": 0 },
+      "color": "#ea580c",
+      "width": 1,
+      "height": 2,
+      "shape": [[1], [1]]
+    },
+    {
+      "id": "_b8j7twwkk",
+      "name": "asd",
+      "description": "asd",
+      "baseWeight": 4,
+      "price": { "cp": 0, "sp": 0, "gp": 0, "pp": 0 },
+      "shape": [
+        [1, 1, 0],
+        [1, 1, 1],
+        [1, 1, 1]
+      ],
+      "width": 3,
+      "height": 3,
+      "color": "#911ac4",
+      "category": "Custom Items"
+    }
+  ]
+}
