@@ -324,7 +324,9 @@ function hideTooltip() {
   itemTooltip.classList.add("hidden");
 }
 
-function renderTooltip(event, element, item) {
+let previousElement = null;
+
+function renderTooltip(event, item, itemDiv) {
   const itemWeight =
     item.shape.flat().filter((c) => c === 1).length * WEIGHT_PER_SQUARE;
   const category = item.category || "Uncategorized";
@@ -336,7 +338,7 @@ function renderTooltip(event, element, item) {
         class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
         onclick="this.classList.toggle('enlarged-tooltip-image')">`;
 
-  element.innerHTML = `
+  itemTooltip.innerHTML = `
     <div class="flex items-start">
         <div>
             <h4 class="font-bold text-base mb-1">${item.name}</h4>
@@ -348,22 +350,22 @@ function renderTooltip(event, element, item) {
         ${item.imageUrl ? imageElement : ""}
     </div>`;
 
-  element.classList.add("visible");
-  element.classList.remove("hidden");
+  itemTooltip.classList.add("visible");
+  itemTooltip.classList.remove("hidden");
 
   // If same item is hovered, do not reposition tooltip
-  if (element.dataset.currentId === item.id) return;
-  element.dataset.currentId = item.id;
+  if (previousElement === itemDiv) return;
+  previousElement = itemDiv;
 
   // Position the tooltip relative to the mouse cursor
-  let tooltipX = event.clientX + window.scrollX - element.offsetWidth / 2;
-  let tooltipY = event.clientY + window.scrollY - element.offsetHeight - 10;
+  let tooltipX = event.clientX + window.scrollX - itemTooltip.offsetWidth / 2;
+  let tooltipY = event.clientY + window.scrollY - itemTooltip.offsetHeight - 10;
 
   if (tooltipX < 0) tooltipX = 16;
   if (tooltipY < 0) tooltipY = 16;
 
-  element.style.left = `${tooltipX}px`;
-  element.style.top = `${tooltipY}px`;
+  itemTooltip.style.left = `${tooltipX}px`;
+  itemTooltip.style.top = `${tooltipY}px`;
 }
 
 // --- Generic Modal Functions (Refactored) ---
@@ -1459,7 +1461,6 @@ function renderAvailableItems() {
         itemDiv.style.width = `${item.width * INITIAL_ITEM_CELL_SIZE_PX}px`;
         itemDiv.style.height = `${item.height * INITIAL_ITEM_CELL_SIZE_PX}px`;
         itemDiv.style.backgroundColor = "transparent";
-        itemDiv.dataset.itemId = item.id;
 
         const shapeContainer = document.createElement("div");
         shapeContainer.className = "absolute inset-0";
@@ -1477,11 +1478,7 @@ function renderAvailableItems() {
         itemDiv.addEventListener("dragend", handleDragEnd);
 
         itemDiv.addEventListener("mouseover", (e) => {
-          renderTooltip(e, itemTooltip, item);
-        });
-
-        itemTooltip.addEventListener("mouseover", (e) => {
-          renderTooltip(e, itemTooltip, item);
+          renderTooltip(e, item, itemDiv);
         });
 
         itemDiv.addEventListener("mouseout", (e) => {
@@ -1555,7 +1552,7 @@ function renderBackpackGrid() {
     placedItemDiv.addEventListener("mouseover", (e) => {
       const item = availableItems.find((a) => a.id === pItem.itemId);
       if (!item) return;
-      renderTooltip(e, itemTooltip, item);
+      renderTooltip(e, item, placedItemDiv);
     });
 
     placedItemDiv.addEventListener("mouseout", () => {
