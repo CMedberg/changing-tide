@@ -77,6 +77,8 @@ const shapeEditModalState = { isDrawing: false, drawingValue: 0 };
 // DOM Elements
 const itemCreatorForm = document.getElementById("item-creator-form");
 const itemNameInput = document.getElementById("itemName");
+const itemACInput = document.getElementById("itemAc");
+const itemDamageInput = document.getElementById("itemDamage");
 const itemDescriptionInput = document.getElementById("itemDescription");
 const itemImageUrlInput = document.getElementById("itemImageUrl");
 const itemBaseWeightInput = document.getElementById("itemBaseWeight");
@@ -143,6 +145,8 @@ const toggleLeftPaneMainIcon = toggleLeftPaneMainBtn.querySelector("svg");
 const itemContextMenu = document.getElementById("item-context-menu");
 const contextDeleteBtn = document.getElementById("context-delete-btn");
 const contextEditNameBtn = document.getElementById("context-edit-name-btn");
+const contextEditACBtn = document.getElementById("context-edit-ac-btn");
+const contextEditDamageBtn = document.getElementById("context-edit-damage-btn");
 const contextEditDescriptionBtn = document.getElementById(
   "context-edit-description-btn"
 );
@@ -324,34 +328,46 @@ function hideTooltip() {
   itemTooltip.classList.add("hidden");
 }
 
+function showTooltip() {
+  itemTooltip.classList.add("visible");
+  itemTooltip.classList.remove("hidden");
+}
+
 let previousElement = null;
-
 function renderTooltip(event, item, itemDiv) {
-  const itemWeight =
+  const weight =
     item.shape.flat().filter((c) => c === 1).length * WEIGHT_PER_SQUARE;
-  const category = item.category || "Uncategorized";
 
-  const imageElement = `
-    <img 
-        src="${item.imageUrl || "https://via.placeholder.com/150"}" 
-        alt="${item.name}" 
-        class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
-        onclick="this.classList.toggle('enlarged-tooltip-image')">`;
+  const {
+    name,
+    imageUrl,
+    description,
+    ac = "",
+    damage = "",
+    price,
+    category = "Uncategorized",
+  } = item;
 
   itemTooltip.innerHTML = `
     <div class="flex items-start">
         <div>
-            <h4 class="font-bold text-base mb-1">${item.name}</h4>
+            <h4 class="font-bold text-base mb-1">${name}</h4>
             <p class="text-xs text-gray-400 mb-2">${category}</p>
-            <p class="text-sm mb-2">${item.description || "No description."}</p>
-            <p class="text-sm mb-2">Weight: ${itemWeight.toFixed(1)} lbs</p>
-            <p class="text-sm">Price: ${formatPrice(item.price)}</p>
+            <p class="text-sm mb-2">${description || "No description."}</p>
+            <p class="text-sm mb-2" ${!damage && "hidden"}>Damage: ${damage}</p>
+            <p class="text-sm mb-2" ${!ac && "hidden"}>AC: ${ac}</p>
+            <p class="text-sm mb-2">Weight: ${weight.toFixed(1)} lbs</p>
+            <p class="text-sm">Price: ${formatPrice(price)}</p>
         </div>
-        ${item.imageUrl ? imageElement : ""}
+        <img 
+        src="${imageUrl || "https://via.placeholder.com/150"}" 
+        alt="${name}"
+        ${!imageUrl && "hidden"}
+        class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
+        onclick="this.classList.toggle('enlarged-tooltip-image')">
     </div>`;
 
-  itemTooltip.classList.add("visible");
-  itemTooltip.classList.remove("hidden");
+  showTooltip();
 
   // If same item is hovered, do not reposition tooltip
   if (previousElement === itemDiv) return;
@@ -1821,23 +1837,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  //   Create Item
   itemCreatorForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = itemNameInput.value.trim();
+
     if (!name) {
       showAlert("Please enter a valid name for the item.");
       return;
     }
+
     const { shape, width, height, occupiedCells } = getTrimmedShape(
       currentShapeEditorShape
     );
+
     if (occupiedCells === 0) {
       showAlert("Please define a shape for the item.");
       return;
     }
+
     availableItems.push({
       id: generateUniqueId(),
       name,
+      ac: parseInt(itemACInput.value) || 0,
+      damage: itemDamageInput.value.trim(),
       imageUrl: itemImageUrlInput.value.trim() || "",
       description: itemDescriptionInput.value.trim(),
       baseWeight: occupiedCells * WEIGHT_PER_SQUARE,
@@ -1855,6 +1878,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .padStart(6, "0")}`,
       category: "Custom Items",
     });
+
     itemCreatorForm.reset();
     currentShapeEditorShape.forEach((row) => row.fill(0));
     renderAll();
@@ -1979,8 +2003,9 @@ document.addEventListener("DOMContentLoaded", () => {
     hideContextMenu();
   });
 
-  contextEditNameBtn.addEventListener("click", () => {
+  function getItemToEdit() {
     let itemToEdit = null;
+
     if (contextMenuItemInstanceId) {
       const placedItem = placedItems.find(
         (p) => p.instanceId === contextMenuItemInstanceId
@@ -1993,6 +2018,11 @@ document.addEventListener("DOMContentLoaded", () => {
         (a) => a.id === contextMenuAvailableItemId
       );
     }
+    return itemToEdit;
+  }
+
+  contextEditNameBtn.addEventListener("click", () => {
+    let itemToEdit = getItemToEdit();
 
     if (itemToEdit) {
       showEditModal("Edit Item Name", "text", itemToEdit.name, (newValue) => {
@@ -2001,6 +2031,44 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         if (itemIndex > -1) {
           availableItems[itemIndex].name = newValue;
+          renderAll();
+          saveDataToLocalStorage();
+          showAlert(`Item name updated to '${newValue}'.`);
+        }
+      });
+    }
+    hideContextMenu();
+  });
+
+  contextEditACBtn.addEventListener("click", () => {
+    const itemToEdit = getItemToEdit();
+
+    if (itemToEdit) {
+      showEditModal("Edit AC", "text", itemToEdit.ac, (newValue) => {
+        const itemIndex = availableItems.findIndex(
+          (item) => item.id === itemToEdit.id
+        );
+        if (itemIndex > -1) {
+          availableItems[itemIndex].ac = newValue;
+          renderAll();
+          saveDataToLocalStorage();
+          showAlert(`Item name updated to '${newValue}'.`);
+        }
+      });
+    }
+    hideContextMenu();
+  });
+
+  contextEditDamageBtn.addEventListener("click", () => {
+    const itemToEdit = getItemToEdit();
+
+    if (itemToEdit) {
+      showEditModal("Edit AC", "text", itemToEdit.damage, (newValue) => {
+        const itemIndex = availableItems.findIndex(
+          (item) => item.id === itemToEdit.id
+        );
+        if (itemIndex > -1) {
+          availableItems[itemIndex].damage = newValue;
           renderAll();
           saveDataToLocalStorage();
           showAlert(`Item name updated to '${newValue}'.`);
@@ -2111,19 +2179,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   contextEditDescriptionBtn.addEventListener("click", () => {
-    let itemToEdit = null;
-    if (contextMenuItemInstanceId) {
-      const placedItem = placedItems.find(
-        (p) => p.instanceId === contextMenuItemInstanceId
-      );
-      if (placedItem) {
-        itemToEdit = availableItems.find((a) => a.id === placedItem.itemId);
-      }
-    } else if (contextMenuAvailableItemId) {
-      itemToEdit = availableItems.find(
-        (a) => a.id === contextMenuAvailableItemId
-      );
-    }
+    const itemToEdit = getItemToEdit();
 
     if (itemToEdit) {
       showEditModal(
@@ -2147,19 +2203,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   contextEditPriceBtn.addEventListener("click", () => {
-    let itemToEdit = null;
-    if (contextMenuItemInstanceId) {
-      const placedItem = placedItems.find(
-        (p) => p.instanceId === contextMenuItemInstanceId
-      );
-      if (placedItem) {
-        itemToEdit = availableItems.find((a) => a.id === placedItem.itemId);
-      }
-    } else if (contextMenuAvailableItemId) {
-      itemToEdit = availableItems.find(
-        (a) => a.id === contextMenuAvailableItemId
-      );
-    }
+    const itemToEdit = getItemToEdit();
 
     if (itemToEdit) {
       showEditModal(
@@ -2200,19 +2244,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   contextEditColorBtn.addEventListener("click", () => {
-    let itemToEdit = null;
-    if (contextMenuItemInstanceId) {
-      const placedItem = placedItems.find(
-        (p) => p.instanceId === contextMenuItemInstanceId
-      );
-      if (placedItem) {
-        itemToEdit = availableItems.find((a) => a.id === placedItem.itemId);
-      }
-    } else if (contextMenuAvailableItemId) {
-      itemToEdit = availableItems.find(
-        (a) => a.id === contextMenuAvailableItemId
-      );
-    }
+    const itemToEdit = getItemToEdit();
 
     if (itemToEdit) {
       showEditModal(

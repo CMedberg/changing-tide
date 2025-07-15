@@ -97,6 +97,34 @@
                 required
               />
             </div>
+            <div class="mb-3 grid grid-cols-2 gap-4">
+            <div>
+              <label 
+                for="itemAc" 
+                class="block text-sm font-medium text-gray-300 mb-1"
+                >AC</label
+              >
+              <input
+                type="text"
+                id="itemAc"
+                class="mt-1 block w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-gray-100"
+                placeholder="e.g. 14 + Dex modifier (max 2)"
+              />
+            </div>
+            <div>
+              <label
+                for="itemDamage"
+                class="block text-sm font-medium text-gray-300 mb-1"
+                >Item Damage</label
+              >
+              <input
+                type="text"
+                id="itemDamage"
+                class="mt-1 block w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-gray-100"
+                placeholder="e.g. 2d6 Slashing"
+              />
+            </div>
+          </div>
             <div class="mb-3">
               <label
                 for="itemImageUrl"
@@ -108,7 +136,6 @@
                 id="itemImageUrl"
                 class="mt-1 block w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-gray-100"
                 placeholder="https://www.image.com/your-image-url.png"
-                required
               />
             </div>
             <div class="mb-3">
@@ -677,8 +704,9 @@
 
       <!-- Item Context Menu -->
       <div id="item-context-menu" class="hidden">
-        <button id="context-delete-btn" class="delete-btn">Delete Item</button>
         <button id="context-edit-name-btn">Edit Name</button>
+        <button id="context-edit-ac-btn">Edit AC</button>
+        <button id="context-edit-damage-btn">Edit Damage</button>
         <button id="context-edit-description-btn">Edit Description</button>
         <button id="context-edit-rotate-btn">
           Rotate item </br> (only works for items inside the backpack)
@@ -686,6 +714,7 @@
         <button id="context-edit-price-btn">Edit Price</button>
         <button id="context-edit-shape-btn">Edit Shape</button>
         <button id="context-edit-color-btn">Change Color</button>
+        <button id="context-delete-btn" class="delete-btn">Delete Item</button>
       </div>
 
       <!-- Generic Edit Modal -->

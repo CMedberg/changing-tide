@@ -249,7 +249,7 @@ body {
   transition: opacity var(--transition-duration-normal)
     var(--transition-timing-ease-in-out);
   z-index: var(--z-index-100); /* Changed z-index */
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   max-width: 400px;
   white-space: normal;
   word-wrap: break-word;
@@ -319,7 +319,7 @@ body {
 }
 
 #item-context-menu button.delete-btn:hover {
-  background-color: var(--color-red-700);
+  background-color: var(--color-red-500);
   color: white;
 }
 
