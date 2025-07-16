@@ -835,18 +835,17 @@ async function loadDataFromGoogleSheet() {
     const result = await response.json();
     if (response.ok && !result.error) {
       if (result.availableItems) {
-        const combinedItems = [...result.availableItems, ...availableItems];
+        const combinedItems = [...availableItems, ...result.availableItems];
         const deleteditems = combinedItems
           .filter((item) => item.deleted)
           .map((item) => item.id);
+
         const itemMap = new Map();
         combinedItems.forEach((item) => {
           if (deleteditems.includes(item.id)) return; // Skip deleted items
           itemMap.set(item.id, item);
         });
         const uniqueItems = Array.from(itemMap.values());
-
-        console.log("Poop", uniqueItems);
 
         availableItems = uniqueItems;
       }
@@ -995,6 +994,7 @@ function checkOverlap(
 function getEncumbranceStatus(weight) {
   if (!currentBackpackId || !allBackpacksData[currentBackpackId])
     return { status: "N/A", colorClass: "text-gray-400" };
+
   const backpack = allBackpacksData[currentBackpackId];
   const heavy = backpack.strengthScore * HEAVILY_ENCUMBERED_MULTIPLIER;
   const encumbered = backpack.strengthScore * ENCUMBERED_MULTIPLIER;
@@ -1145,19 +1145,15 @@ function updateGridPreview() {
 
   dragEvent.dataTransfer.dropEffect = isPhysicalOverlapValid ? "move" : "none";
 
-  dragPreviewElement.style.top = `${hoveredCell.row * cellSize}px`;
-  dragPreviewElement.style.left = `${hoveredCell.col * cellSize}px`;
-  dragPreviewElement.style.width = `${draggingItem.width * cellSize}px`;
-  dragPreviewElement.style.height = `${draggingItem.height * cellSize}px`;
+  Object.assign(dragPreviewElement.style, {
+    top: `${hoveredCell.row * cellSize}px`,
+    left: `${hoveredCell.col * cellSize}px`,
+    width: `${draggingItem.width * cellSize}px`,
+    height: `${draggingItem.height * cellSize}px`,
+  });
 
-  // dragPreviewElement.className = `absolute rounded-md border-2 opacity-75 z-20 pointer-events-none
-  // ${
-  //   isPhysicalOverlapValid
-  //     ? "border-green-400 bg-green-200 bg-opacity-25"
-  //     : "border-red-500 bg-red-200 bg-opacity-25"
-  // }`;
-
-  dragPreviewElement.className = `absolute rounded-md opacity-50 z-20 pointer-events-none`;
+  dragPreviewElement.className =
+    "absolute rounded-md opacity-50 z-20 pointer-events-none";
 
   renderShapeIntoElement(dragPreviewElement, draggingItem, cellSize);
   dragPreviewElement.classList.remove("hidden");
@@ -1228,19 +1224,6 @@ function handleDragEnd(e) {
   dragPreviewElement.classList.add("hidden");
   hideTooltip();
   renderAll();
-}
-
-function handleKeyDown(e) {
-  if ((e.key === "r" || e.key === "R") && draggingItem) {
-    e.preventDefault();
-    const rotatedShape = rotateShape(draggingItem.shape);
-    draggingItem.shape = rotatedShape;
-    [draggingItem.width, draggingItem.height] = [
-      draggingItem.height,
-      draggingItem.width,
-    ];
-    updateGridPreview();
-  }
 }
 
 // --- Core Item Placement and Removal Functions ---
@@ -1748,7 +1731,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAll();
 
   window.addEventListener("resize", renderBackpackGrid);
-  document.addEventListener("keydown", handleKeyDown);
   document.addEventListener("mouseup", () => {
     mainEditorState.isDrawing = false;
     shapeEditModalState.isDrawing = false;
