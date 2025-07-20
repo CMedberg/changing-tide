@@ -360,7 +360,7 @@ function renderTooltip(event, item, itemDiv) {
             <p class="text-sm">Price: ${formatPrice(price)}</p>
         </div>
         <img 
-        src="${imageUrl || "https://via.placeholder.com/150"}" 
+        src="${imageUrl || ""}" 
         alt="${name}"
         ${!imageUrl && "hidden"}
         class="w-24 ml-4 flex-shrink-0 cursor-pointer transition-all duration-300"
