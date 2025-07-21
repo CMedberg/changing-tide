@@ -48,12 +48,10 @@ let draggingItem = null; // { itemId, instanceId, shape, width, height, color }
 let dragOffset = { x: 0, y: 0 };
 let isDraggingFromBackpack = false;
 let originalPlacedItemPosition = null;
-let hoveredCell = { row: -1, col: -1 };
 let lastHoveredCell = { row: -1, col: -1 };
 let isPhysicalOverlapValid = true;
 let droppedInBackpackArea = false;
 let dragEvent = null;
-let isDragUpdateScheduled = false;
 
 // Item Creator State
 let currentShapeEditorShape = Array(SHAPE_EDITOR_SIZE)
@@ -1067,24 +1065,28 @@ function handleDragStart(e, item, sourceInstanceId = null) {
   }, 0);
 }
 
+let lastMouseX = 0;
+let lastMouseY = 0;
+let isDragUpdateScheduled = false;
+
+let hoveredCell = { row: -1, col: -1 };
+let isDropPositionValid = false;
+
+/**
+ * Handles the 'dragover' event synchronously.
+ * Calculates the target cell, checks validity, and sets the dropEffect.
+ * Then, it schedules a visual-only update.
+ * @param {DragEvent} e - The dragover event object.
+ */
 function handleDragOver(e) {
   e.preventDefault();
   if (!draggingItem) return;
 
-  dragEvent = e; // Cache the event
+  // Save the mouse position
+  lastMouseX = e.clientX;
+  lastMouseY = e.clientY;
 
-  if (!isDragUpdateScheduled) {
-    isDragUpdateScheduled = true;
-    requestAnimationFrame(updateGridPreview);
-  }
-}
-
-function updateGridPreview() {
-  if (!dragEvent || !draggingItem) {
-    isDragUpdateScheduled = false;
-    return;
-  }
-
+  // --- All logic is handled here ---
   const backpackContainerWidth = backpackGridContainer.offsetWidth;
   const backpackContainerHeight = backpackGridContainer.offsetHeight;
   const cellSize = Math.min(
@@ -1093,11 +1095,12 @@ function updateGridPreview() {
   );
 
   const backpackRect = backpackGridContainer.getBoundingClientRect();
-  const x = dragEvent.clientX - backpackRect.left;
-  const y = dragEvent.clientY - backpackRect.top;
-  let targetCol = Math.floor(x / cellSize);
-  let targetRow = Math.floor(y / cellSize);
+  const x = lastMouseX - backpackRect.left;
+  const y = lastMouseY - backpackRect.top;
+  targetCol = Math.floor(x / cellSize);
+  targetRow = Math.floor(y / cellSize);
 
+  // Clamp the row and column to stay within the grid boundaries
   let clampedRow = Math.max(
     0,
     Math.min(targetRow, dynamicBackpackRows - draggingItem.height)
@@ -1109,17 +1112,7 @@ function updateGridPreview() {
   clampedRow = isNaN(clampedRow) || clampedRow < 0 ? 0 : clampedRow;
   clampedCol = isNaN(clampedCol) || clampedCol < 0 ? 0 : clampedCol;
 
-  if (
-    clampedRow === lastHoveredCell.row &&
-    clampedCol === lastHoveredCell.col
-  ) {
-    isDragUpdateScheduled = false;
-    return;
-  }
-
-  hoveredCell = { row: clampedRow, col: clampedCol };
-  lastHoveredCell = { row: clampedRow, col: clampedCol };
-
+  // Create a temporary grid to check for overlaps
   const tempGrid = Array(dynamicBackpackRows)
     .fill(null)
     .map(() => Array(dynamicBackpackCols).fill(null));
@@ -1135,7 +1128,9 @@ function updateGridPreview() {
     }
   });
 
-  isPhysicalOverlapValid = checkOverlap(
+  // Save the calculated state into our shared variables
+  hoveredCell = { row: clampedRow, col: clampedCol };
+  isDropPositionValid = checkOverlap(
     draggingItem,
     hoveredCell.row,
     hoveredCell.col,
@@ -1143,8 +1138,33 @@ function updateGridPreview() {
     draggingItem.instanceId
   );
 
-  dragEvent.dataTransfer.dropEffect = isPhysicalOverlapValid ? "move" : "none";
+  // Set the dropEffect synchronously based on the result
+  e.dataTransfer.dropEffect = isDropPositionValid ? "move" : "none";
 
+  // Schedule the visual-only update
+  if (!isDragUpdateScheduled) {
+    isDragUpdateScheduled = true;
+    requestAnimationFrame(updateGridPreview);
+  }
+}
+
+/**
+ * Updates only the visual preview element.
+ * Uses the pre-calculated state from handleDragOver.
+ */
+function updateGridPreview() {
+  isDragUpdateScheduled = false; // Always reset the flag
+  if (!draggingItem) return;
+
+  // We still need the cell size to position the element correctly
+  const backpackContainerWidth = backpackGridContainer.offsetWidth;
+  const backpackContainerHeight = backpackGridContainer.offsetHeight;
+  const cellSize = Math.min(
+    backpackContainerWidth / dynamicBackpackCols,
+    backpackContainerHeight / dynamicBackpackRows
+  );
+
+  // Use the saved values to update the preview's position
   Object.assign(dragPreviewElement.style, {
     top: `${hoveredCell.row * cellSize}px`,
     left: `${hoveredCell.col * cellSize}px`,
@@ -1152,13 +1172,17 @@ function updateGridPreview() {
     height: `${draggingItem.height * cellSize}px`,
   });
 
+  // Update the appearance based on whether the position is valid
+  // (This replaces the old dropEffect logic for user feedback)
+  //   dragPreviewElement.style.border = isDropPositionValid
+  //     ? "rgba(0, 255, 0, 0.5)" // Green if valid
+  //     : "rgba(255, 0, 0, 0.5)"; // Red if invalid
+
+  // Remaining visual logic
   dragPreviewElement.className =
     "absolute rounded-md opacity-50 z-20 pointer-events-none";
-
   renderShapeIntoElement(dragPreviewElement, draggingItem, cellSize);
   dragPreviewElement.classList.remove("hidden");
-
-  isDragUpdateScheduled = false;
 }
 
 function handleDragLeave(e) {
